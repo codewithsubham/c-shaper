@@ -26,8 +26,8 @@ signals:
 
 private:
     QColor main_render_backgroundcolor;
-    QColor main_shape_color;
     Render_shapes main_shape;
+    QColor main_shape_color;
 
 
 };

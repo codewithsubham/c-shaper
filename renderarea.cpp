@@ -2,7 +2,7 @@
 #include <QPaintEvent>
 #include <QPainter>
 
-RenderArea::RenderArea(QWidget *parent) : QWidget(parent) , main_render_backgroundcolor(255,22 , 255) , main_shape_color(255 , 255 , 255)
+RenderArea::RenderArea(QWidget *parent) : QWidget(parent) , main_shape (shape1) , main_shape_color(255 , 255 , 255)
 {
 
 }
@@ -26,7 +26,6 @@ void RenderArea::paintEvent(QPaintEvent *E)
 
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing , true);
-    painter.setPen(this->main_shape_color);
 
     switch (main_shape) {
     case shape1:
@@ -45,6 +44,7 @@ void RenderArea::paintEvent(QPaintEvent *E)
         break;
     }
     painter.setBrush(this->main_render_backgroundcolor);
+    painter.setPen(this->main_shape_color);
 
 
 
