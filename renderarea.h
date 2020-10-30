@@ -11,9 +11,12 @@ public:
     QSize minimunSizeHint() const;
     QSize sizeHint() const Q_DECL_OVERRIDE;
 
+    enum Render_shapes { shape1 ,shape2 ,shape3 ,shape4};
     void setBackgroundColor(QColor color){ this->main_render_backgroundcolor =  color;};
 
-    void set_main_shape_color(QColor color){ this->main_shape_color =  color;};
+    void set_shape(Render_shapes shape){main_shape = shape;};
+
+    Render_shapes get_shape(){return main_shape;};
 
     QColor getBackgroundColor() const {return this->main_render_backgroundcolor;};
 protected:
@@ -24,7 +27,7 @@ signals:
 private:
     QColor main_render_backgroundcolor;
     QColor main_shape_color;
-
+    Render_shapes main_shape;
 
 
 };
