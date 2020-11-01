@@ -25,28 +25,28 @@
         <item>
          <widget class="QPushButton" name="BtnRed">
           <property name="text">
-           <string>Red</string>
+           <string>Asteroids</string>
           </property>
          </widget>
         </item>
         <item>
          <widget class="QPushButton" name="BtnBlue">
           <property name="text">
-           <string>Blue</string>
+           <string>Cycloid</string>
           </property>
          </widget>
         </item>
         <item>
          <widget class="QPushButton" name="BtnGreen">
           <property name="text">
-           <string>Green</string>
+           <string>huygen</string>
           </property>
          </widget>
         </item>
         <item>
          <widget class="QPushButton" name="BtnYellow">
           <property name="text">
-           <string>Yellow</string>
+           <string>hypo</string>
           </property>
          </widget>
         </item>
