@@ -19,6 +19,10 @@ public:
     Render_shapes get_shape(){return main_shape;};
 
     QColor getBackgroundColor() const {return this->main_render_backgroundcolor;};
+
+    void changeScaleValue(double value){this->scale = value;repaint();};
+
+    float getScale() const {return this->scale;}
 protected:
     void paintEvent(QPaintEvent *E) Q_DECL_OVERRIDE;
 

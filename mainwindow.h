@@ -24,6 +24,10 @@ private slots:
 
     void on_BtnYellow_clicked();
 
+    void on_doubleSpinBox_valueChanged(double arg1);
+
+    void update_ui();
+
 private:
     Ui::MainWindow *ui;
 };

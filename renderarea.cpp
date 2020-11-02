@@ -104,18 +104,25 @@ void RenderArea::paintEvent(QPaintEvent *E)
 
 
     QPainter painter(this);
+    QPen pen;
     painter.setRenderHint(QPainter::Antialiasing , true);
-    painter.setBrush(this->main_render_backgroundcolor);
-    painter.setPen(this->main_shape_color);
+    painter.setBrush(this->main_shape_color);
+
     painter.drawRect(this->rect());
+    pen.setMiterLimit(20);
+    pen.setWidth(2);
+    pen.setBrush(this->main_render_backgroundcolor);
+
+    painter.setPen(pen);
 
     QPoint center = this->rect().center();
-
-
-
     float step =  interval_length / step_count;
 
-    qDebug() << interval_length;
+    computeShape(0);
+    QPointF saveLastPoint(this->MQPointF.x() * this->scale + center.x(), this->MQPointF.y() * this->scale + center.y());
+
+
+
 
     for(float i = 0 ; i < interval_length; i += step){
 
@@ -125,7 +132,9 @@ void RenderArea::paintEvent(QPaintEvent *E)
         pixel.setX(this->MQPointF.x() * scale + center.x());
         pixel.setY(this->MQPointF.y() * scale + center.y());
 
-        painter.drawPoint(pixel);
+        painter.drawLine(pixel , saveLastPoint);
+        saveLastPoint.setX(this->MQPointF.x() * scale + center.x());
+        saveLastPoint.setY(this->MQPointF.y() * scale + center.y());
 
     }
 
