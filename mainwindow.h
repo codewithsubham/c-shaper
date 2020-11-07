@@ -28,6 +28,8 @@ private slots:
 
     void update_ui();
 
+    void on_doubleSpinBox_2_valueChanged(double arg1);
+
 private:
     Ui::MainWindow *ui;
 };
